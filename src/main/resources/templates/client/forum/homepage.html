@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+
+    <title>Trang chủ cộng đồng</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link th:href="@{/vendor/mdb/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/mdb/css/mdb.min.css}" rel="stylesheet"/>
+
+    <link th:href="@{/client/css/forum.css}" rel="stylesheet"/>
+</head>
+<body>
+<!-- Header -->
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--    <div th:replace="/fragments/client/header :: headerOfForumSignedIn"></div>-->
+<!--</div>-->
+<!--<div sec:authorize="!isAuthenticated()">-->
+<!--    <div th:replace="/fragments/client/header :: headerOfForumNotSignIn"></div>-->
+<!--</div>-->
+<div th:replace="/fragments/client/header :: header"></div>
+
+<!-- Footer -->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/jquery-3.4.1.min.js}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/popper.min.js}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/bootstrap.min.js}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/mdb.min.js}"></script>
+</body>
+</html>

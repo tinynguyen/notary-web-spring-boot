@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <div th:fragment="headTag">
+        <!-- Required meta tag -->
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Bootstrap & MDB CSS -->
+        <link th:href="@{/vendor/mdb/css/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/mdb/css/mdb.min.css}" rel="stylesheet"/>
+    </div>
+</head>
+<body>
+<!-- Main header -->
+
+<!--Navbar -->
+<div th:fragment="headerOfMain">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand text-dark font-weight-bold" th:href="@{/}">DAT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#mainHeader"
+                aria-controls="mainHeader" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="black-text fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto nav-ul-homepage">
+                <li class="nav-item nav-li">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/blog}">Blog</a>
+                </li>
+                <li class="nav-item nav-li">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/dat-la-ai}"> Đạt là ai?</a>
+                </li>
+                <li class="nav-item nav-li">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/cong-dong}"> Cộng đồng</a>
+                </li>
+                <li class="nav-item nav-li">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/dich-vu}"> Dịch vụ</a>
+                </li>
+                <li class="nav-item nav-phone">
+                    <a class="nav-link font-weight-bold" href="tel:0937661646" style="color: #c3002f"> 0937.661.646</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--/.Navbar -->
+<!--/. Main header -->
+
+<!-- Header of Forum Signed In -->
+<!--Navbar -->
+<!--<div th:fragment="headerOfForumSignedIn" xmlns:th="http://www.thymeleaf.org">-->
+<!--    <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">-->
+<!--        <a class="navbar-brand" th:href="@{/}">DAT</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerOfForumSignedIn"-->
+<!--                aria-controls="headerOfForumSignedIn" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="headerOfForumSignedIn">-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/cong-dong}">Cộng đồng</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/cong-dong/thanh-vien}">Thành viên</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/cong-dong/danh-muc}">Danh mục</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/dich-vu}">Dịch vụ</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <ul class="navbar-nav ml-auto nav-flex-icons">-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" id="headerOfForumSignedInDropdown" data-toggle="dropdown"-->
+<!--                       aria-haspopup="true" aria-expanded="false">-->
+<!--                        <img th:src="@{/uploads/avatar/{avatarName}(avatarName=${user.avatarName})}"-->
+<!--                             class="rounded-circle z-depth-0"-->
+<!--                             alt="avatar image" height="35" width="35">-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu dropdown-menu-right dropdown-default"-->
+<!--                         aria-labelledby="headerOfForumSignedInDropdown">-->
+<!--                        <a class="dropdown-item" th:href="@{/cong-dong/tai-khoan/thong-tin}">Thông tin</a>-->
+<!--                        <form th:action="@{/logout}" method="post">-->
+<!--                            <button type="submit" class="dropdown-item">Đăng xuất</button>-->
+<!--                        </form>-->
+
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</div>-->
+<!--/. Navbar -->
+<!--/. Header of Forum Signed In -->
+
+<!-- Header of Forum Not Sign In -->
+<!--Navbar -->
+<!--<div th:fragment="headerOfForumNotSignIn">-->
+<!--    <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">-->
+<!--        <a class="navbar-brand" th:href="@{/}">DAT</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerOfForumNotSignIn"-->
+<!--                aria-controls="headerOfForumNotSignIn" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="headerOfForumNotSignIn">-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/cong-dong}">Cộng đồng</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/cong-dong/thanh-vien}">Thành viên</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/cong-dong/danh-muc}">Danh mục</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/dich-vu}">Dịch vụ</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <ul class="navbar-nav ml-auto nav-flex-icons">-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" id="headerOfForumNotSignInDropdown" data-toggle="dropdown"-->
+<!--                       aria-haspopup="true" aria-expanded="false">-->
+<!--                        <img th:src="@{/uploads/avatar/placeholder.jpg}"-->
+<!--                             class="rounded-circle z-depth-0"-->
+<!--                             alt="avatar image" height="35">-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu dropdown-menu-right dropdown-default"-->
+<!--                         aria-labelledby="headerOfForumNotSignInDropdown">-->
+<!--                        <a class="dropdown-item" th:href="@{/dang-ky}">Đăng ký</a>-->
+<!--                        <a class="dropdown-item" th:href="@{/dang-nhap}">Đăng nhập</a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</div>-->
+<!--/. Navbar -->
+<!--/. Header of Forum Not Sign In -->
+
+
+<!--Navbar -->
+<div th:fragment="header">
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark nav-forum white">
+        <a class="navbar-brand text-dark font-weight-bold" th:href="@{/}">DAT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#header"
+                aria-controls="header" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="black-text fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="header">
+            <ul class="navbar-nav mr-auto align-items-center nav-ul-left">
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/cong-dong}">Cộng đồng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/thanh-vien}">Thành viên</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark font-weight-bold" id="categoryDropdown"
+                       data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Danh mục</a>
+                    <div class="dropdown-menu dropdown-default text-center"
+                         aria-labelledby="categoryDropdown">
+                        <a class="dropdown-item text-dark font-weight-bold"
+                           th:href="@{/cong-dong/luat-cong-chung}">Luật công chứng</a>
+                        <a class="dropdown-item text-dark font-weight-bold"
+                           th:href="@{/cong-dong/luat-dat-dai}">Luật đất đai</a>
+                        <a class="dropdown-item text-dark font-weight-bold"
+                           th:href="@{/cong-dong/luat-dan-su}">Luật dân sự</a>
+                        <a class="dropdown-item text-dark font-weight-bold"
+                           th:href="@{/cong-dong/luat-hon-nhan-va-gia-dinh}">Luật hôn nhân & gia đình</a>
+                        <a class="dropdown-item text-dark font-weight-bold"
+                           th:href="@{/cong-dong/luat-doanh-nghiep}">Luật doanh nghiệp</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark font-weight-bold" th:href="@{/dich-vu}">Dịch vụ</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons justify-content-center nav-ul-right">
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link waves-effect waves-light text-primary font-weight-bold"
+                       href="https://www.facebook.com/nguyencongdat.coder" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link waves-effect waves-light text-dark font-weight-bold"
+                       href="mailto:ncd.ccpn@gmail.com" target="_blank">
+                        <i class="fas fa-at"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle text-dark font-weight-bold" id="accountSignedInDropdown"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img th:src="@{/uploads/avatar/{avatarName}(avatarName=${user.avatarName})}"
+                             class="rounded-circle z-depth-0"
+                             alt="avatar image" height="35" width="35">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default text-center"
+                         aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item text-dark font-weight-bold"
+                           th:href="@{/cong-dong/tai-khoan/thong-tin(id=${user.id})}">Tài khoản
+                        </a>
+                        <form th:action="@{/logout}" method="POST" class="w-100">
+                            <input class="dropdown-item font-weight-bold logout-btn" type="submit"
+                                   value="Đăng xuất" style=""/>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" sec:authorize="!isAuthenticated()">
+                    <a class="nav-link dropdown-toggle text-dark font-weight-bold" id="navbarDropdownMenuLink-333"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img th:src="@{/uploads/avatar/placeholder.jpg}" class="rounded-circle z-depth-0"
+                             alt="avatar image" height="35">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default text-center"
+                         aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item text-dark font-weight-bold" th:href="@{/dang-nhap}">Đăng nhập</a>
+                        <a class="dropdown-item text-dark font-weight-bold" th:href="@{/dang-ky}">Đăng ký</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

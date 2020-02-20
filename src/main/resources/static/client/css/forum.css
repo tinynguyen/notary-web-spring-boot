@@ -1,0 +1,45 @@
+body {
+    overflow-x: hidden;
+}
+
+.nav-forum .nav-ul-left .nav-item a,
+.nav-forum .nav-ul-right .nav-item a {
+    border-bottom: 1.5px solid transparent;
+    border-top: 1.5px solid transparent;
+    transform: 0.1s all ease-in;
+}
+
+.nav-forum .nav-ul-left .nav-item:hover .nav-link,
+.nav-forum .nav-ul-right .nav-item:hover .nav-link {
+    border-top: 0px solid transparent;
+    border-bottom: 3px solid #c3002f;
+}
+
+.nav-forum .nav-ul-left .dropdown-menu .dropdown-item:hover,
+.nav-forum .nav-ul-right .dropdown-menu .dropdown-item:hover{
+    border-top: 0px solid transparent;
+    border-bottom: 3px solid #c3002f;
+}
+
+.nav-forum .logout-btn {
+    padding: 10px;
+    font-size: .9375rem;
+    font-weight: 300;
+    color: #000;
+}
+
+.hr-footer {
+    border-top: 2px solid #c3002f
+}
+
+.info #info-table td {
+    border-top: none;
+    vertical-align: unset;
+}
+
+@media screen and (max-width: 991px) {
+    .dropdown-menu-right {
+        right: -150px;
+        top: -100px;
+    }
+}

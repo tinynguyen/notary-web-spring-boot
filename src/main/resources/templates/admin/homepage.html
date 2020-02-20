@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>Homepage Admin</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link th:href="@{/vendor/mdb/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/mdb/css/mdb.min.css}" rel="stylesheet"/>
+    <style>
+        table {
+            table-layout: auto;
+        }
+
+        table td, table th {
+            word-wrap: break-spaces;
+            vertical-align: unset !important;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="admin/fragments/header :: header"></div>
+
+<!--Table-->
+<div class="container-fluid">
+    <table class="table w-100 table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tiêu đề</th>
+            <th scope="col">Thao tác</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="news, iter : ${allNews}">
+            <th scope="row" th:utext="${iter.count}"></th>
+            <td class="w-50" th:utext="${news.title}">Mark</td>
+            <td>
+                <a th:href="@{/admin/edit-post(id=${news.id})}">
+                    <button type="button" class="btn btn-success">Sửa</button>
+                </a>
+                <a th:href="@{/admin/delete-post(id=${news.id})}">
+                    <button type="button" class="btn btn-success">Xóa</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--Table-->
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/jquery-3.4.1.min.js}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/popper.min.js}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/bootstrap.min.js}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/mdb.min.js}"></script>
+</body>
+</html>

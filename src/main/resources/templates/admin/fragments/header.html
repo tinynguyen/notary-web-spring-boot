@@ -1,0 +1,30 @@
+<!--Navbar -->
+<div th:fragment="header" xmlns:th="http://www.thymeleaf.org">
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+        <a class="navbar-brand" th:href="@{/admin}">DAT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+            <ul class="navbar-nav ml-5">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">
+                        Client
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/create-post}">
+                        Create Post
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/create-category}">
+                        Create Category
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--/.Navbar -->

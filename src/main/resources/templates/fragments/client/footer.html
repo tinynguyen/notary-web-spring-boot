@@ -1,0 +1,93 @@
+<!-- Footer -->
+<!-- Footer -->
+<div th:fragment="footer" xmlns:th="http://www.thymeleaf.org">
+    <footer class="page-footer font-small unique-color-dark">
+
+        <div style="background-color: #c3002f;">
+            <div class="container">
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">Liên hệ với tôi thông qua mạng xã hội</h6>
+                    </div>
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+                        <!-- Facebook -->
+                        <a class="fb-ic" href="https://www.facebook.com/nguyencongdat.coder" target="_blank">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic" href="mailto:ncd.ccpn@gmail.com" target="_blank">
+                            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Nguyễn Công Đạt</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto hr-footer" style="width: 60px;">
+                    <p>Blog này Đạt xây dựng với mục đích cùng cộng đồng chia sẻ những kiến thức cần biết về pháp luật,
+                        công
+                        chứng và mang đến cho mọi người những dịch vụ miễn phí.</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Danh mục</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto hr-footer" style="width: 60px;">
+                    <p>
+                        <a th:href="@{/blog} ">Blog</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/dat-la-ai}">Đạt là ai?</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/cong-dong}">Cộng đồng</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/dich-vu}">Dịch vụ</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Chủ đề HOT</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto hr-footer" style="width: 60px;">
+                    <p>
+                        <a th:href="@{/blog/luat-cong-chung}">Luật công chứng</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/blog/luat-hon-nhan-va-gia-dinh}">Luật hôn nhân gia đình</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/blog/luat-dat-dai}">Luât đất đai</a>
+                    </p>
+                    <p>
+                        <a th:href="@{/blog/luat-doanh-nghiep}">Luât doanh nghiệp</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto hr-footer" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i> 71 Cô Giang, P.1, Q.PN</p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> ncd.ccpn@gmail.com</p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> 0937.661.646</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a th:href="@{/}"> Nguyễn Công Đạt</a>
+        </div>
+
+    </footer>
+</div>

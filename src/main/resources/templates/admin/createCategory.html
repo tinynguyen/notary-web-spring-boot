@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>Create Post</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link th:href="@{/vendor/mdb/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/mdb/css/mdb.min.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<div th:replace="admin/fragments/header :: header"></div>
+
+<form class="border border-light p-5" th:action="@{/admin/create-category}" th:object="${category}" method="post">
+
+    <p class="h4 mb-4 text-center">Sign in</p>
+
+    <label th:for="name">Text input Label</label>
+    <input th:type="text" th:id="name" class="form-control mb-4" th:placeholder="Name" th:field="*{name}">
+
+    <label th:for="description">Textarea Label</label>
+    <textarea class="form-control mb-4" th:placeholder="Description" th:id="description"
+              th:field="*{description}"></textarea>
+
+    <button class="btn btn-info btn-block my-4" th:type="submit">Add</button>
+
+</form>
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/jquery-3.4.1.min.js}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/popper.min.js}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/bootstrap.min.js}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" th:src="@{/vendor/mdb/js/mdb.min.js}"></script>
+</body>
+</html>
